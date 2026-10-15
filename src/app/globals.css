@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 60% 99%; /* Clean crisp white with lavender undertone #FAF9FD */
+    --foreground: 240 25% 12%; /* Deep charcoal/indigo #181824 */
+    --card: 0 0% 100%; /* Pure white #FFFFFF */
+    --card-foreground: 240 25% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 25% 12%;
+    --primary: 258 90% 64%; /* Modern Royal Lavender #7C5CFC */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 50% 96%; /* Soft lavender chip #F3EFFC */
+    --secondary-foreground: 258 70% 38%; /* Deep lavender text #5B21B6 */
+    --muted: 250 25% 96%;
+    --muted-foreground: 240 10% 46%;
+    --accent: 255 85% 95%; /* Pale lavender highlight */
+    --accent-foreground: 258 70% 38%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 255 30% 92%; /* Delicate soft lavender border #E8E3F5 */
+    --input: 255 30% 92%;
+    --ring: 258 90% 64%;
+    --radius: 0.85rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#FAF9FD] text-slate-800 antialiased selection:bg-[#7C5CFC]/20 selection:text-[#5B21B6];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    background-color: #FAF9FD;
+  }
+}
+
+/* Atmospheric ambient glow in soft white-lavender tints */
+.ambient-top-glow {
+  background: radial-gradient(ellipse at 50% 0%, rgba(124, 92, 252, 0.08) 0%, rgba(196, 181, 253, 0.04) 45%, transparent 75%);
+}
+
+/* Modern subtle engineering grid lines in soft lavender */
+.wensity-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(124, 92, 252, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 92, 252, 0.035) 1px, transparent 1px);
+}
+
+/* Tabular nums for engineering metrics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom soft lavender scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 92, 252, 0.55);
+}
+
+/* Code block highlight styling */
+.code-syntax {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
